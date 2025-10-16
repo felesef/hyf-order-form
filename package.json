@@ -1,0 +1,16 @@
+{
+  "name": "order-form",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "pkill -f http-server || true && npx http-server . -p 3000 -o",
+    "serve": "pkill -f http-server || true && npx http-server . -p 3000",
+    "build": "echo 'No build process needed for static files'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true,
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
