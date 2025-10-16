@@ -141,8 +141,21 @@ main {
 }
 
 .method-type:focus {
-  outline: 2px solid #FE4E9B;
-  outline-offset: 3px;
+  outline: none;
+  box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+  transition: box-shadow 0.3s ease;
+  filter: brightness(1.1);
+}
+
+.method-type:hover img {
+  filter: grayscale(0%) !important;
+  opacity: 1 !important;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.method-type:hover .method-title {
+  color: #7A7A7A !important;
+  transition: color 0.3s ease;
 }
 
 .method-title {
