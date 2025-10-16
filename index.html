@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,71 +8,77 @@
   <link rel="stylesheet" href="styles.css" />
   <script src="script.js" defer></script>
 </head>
+
 <body>
-<header>
-  <h1>Order Form</h1>
-  <p>Please fill in your payment details below</p>
-</header>
-<main>
-  <section class="order-summary">
-    <h2>Order Summary</h2>
-    <div class="summary-row">
-      <span>Item</span>
-      <span>$333 / month</span>
+  <header>
+    <h1>Order Form</h1>
+    <p>Please fill in your payment details below</p>
+  </header>
+  <main>
+    <section class="order-summary">
+      <h2>Order Summary</h2>
+      <div class="summary-row">
+        <span>Item</span>
+        <span>$333 / month</span>
+      </div>
+      <div class="summary-row total">
+        <span>Total</span>
+        <span>$100</span>
+      </div>
+    </section>
+    <form class="checkout-form" action="#" method="post" novalidate>
+      <section class="payment-method">
+        <h2>Payment Method</h2>
+        <div class="methods" role="radiogroup" aria-label="Payment method">
+          <div class="method-type is-active" data-method="card" role="radio" aria-checked="true" tabindex="0">
+            <img src="assets/cards.webp" alt="Credit Card" />
+            <div class="method-title">Credit Card</div>
+          </div>
+          <div class="method-type" data-method="paypal" role="radio" aria-checked="false" tabindex="0">
+            <img src="assets/paypal.webp" alt="PayPal" />
+            <div class="method-title">PayPal</div>
+          </div>
+        </div>
+      </section>
+      <section class="paypal-info" aria-hidden="true">
+        <h2>PayPal Email</h2>
+        <div class="paypal-grid">
+          <div class="field paypal-email">
+            <label for="paypal-email">Email</label>
+            <input type="email" id="paypal-email" name="paypal-email" placeholder="email@example.com"
+              autocomplete="email" inputmode="email" />
+          </div>
+        </div>
+      </section>
+      <section class="card-info">
+        <h2>Card Information</h2>
+        <div class="card-grid">
+          <div class="field card-number">
+            <label for="card-number">Card Number</label>
+            <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456"
+              autocomplete="cc-number" inputmode="numeric" maxlength="19" />
+          </div>
+          <div class="field exp-date">
+            <label for="exp-date">Expiry Date</label>
+            <input type="text" id="exp-date" name="exp-date" placeholder="MM / YY" autocomplete="cc-exp"
+              inputmode="numeric" maxlength="7" />
+          </div>
+          <div class="field sec-code">
+            <label for="sec-code">CVV</label>
+            <input type="text" id="sec-code" name="sec-code" placeholder="123" autocomplete="cc-csc" inputmode="numeric"
+              maxlength="4" />
+          </div>
+        </div>
+      </section>
+      <div class="submit-button">
+        <button id="buy-now" type="submit">Buy Now</button>
+      </div>
+    </form>
+    <div class="need-help">
+      <p>Need help?</p>
     </div>
-    <div class="summary-row total">
-      <span>Total</span>
-      <span>$100</span>
-    </div>
-  </section>
-  <form class="checkout-form" action="#" method="post" novalidate>
-  <section class="payment-method">
-    <h2>Payment Method</h2>
-    <div class="methods" role="radiogroup" aria-label="Payment method">
-      <div class="method-type is-active" data-method="card" role="radio" aria-checked="true" tabindex="0">
-        <img src="assets/cards.webp" alt="Credit Card" />
-        <div class="method-title">Credit Card</div>
-      </div>
-      <div class="method-type" data-method="paypal" role="radio" aria-checked="false" tabindex="0">
-        <img src="assets/paypal.webp" alt="PayPal" />
-        <div class="method-title">PayPal</div>
-      </div>
-    </div>
-  </section>
-  <section class="paypal-info" aria-hidden="true">
-    <h2>PayPal Email</h2>
-    <div class="paypal-grid">
-      <div class="field paypal-email">
-        <label for="paypal-email">Email</label>
-        <input type="email" id="paypal-email" name="paypal-email" placeholder="email@example.com" autocomplete="email" inputmode="email" />
-      </div>
-    </div>
-  </section>
-  <section class="card-info">
-    <h2>Card Information</h2>
-    <div class="card-grid">
-      <div class="field card-number">
-        <label for="card-number">Card Number</label>
-        <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" autocomplete="cc-number" inputmode="numeric" maxlength="19" />
-      </div>
-      <div class="field exp-date">
-        <label for="exp-date">Expiry Date</label>
-        <input type="text" id="exp-date" name="exp-date" placeholder="MM / YY" autocomplete="cc-exp" inputmode="numeric" maxlength="7" />
-      </div>
-      <div class="field sec-code">
-        <label for="sec-code">CVV</label>
-        <input type="text" id="sec-code" name="sec-code" placeholder="123" autocomplete="cc-csc" inputmode="numeric" maxlength="4" />
-      </div>
-    </div>
-  </section>
-  <div class="submit-button">
-    <button id="buy-now" type="submit">Buy Now</button>
-  </div>
-  </form>
-  <div class="need-help">
-    <p>Need help?</p>
-  </div>
-</main>
+  </main>
 
 </body>
+
 </html>

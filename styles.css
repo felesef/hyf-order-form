@@ -15,6 +15,7 @@ header {
   background-color: gray;
   margin-bottom: 24px;
 }
+
 header h1 {
   font-size: 70px;
   font-weight: 400;
@@ -153,11 +154,13 @@ main {
   color: #7A7A7A;
 }
 
-.card-info, .paypal-info {
+.card-info,
+.paypal-info {
   padding: 24px;
 }
 
-.card-info h2, .paypal-info h2 {
+.card-info h2,
+.paypal-info h2 {
   margin: 0 0 12px;
   font-size: var(--font-size-24);
   font-weight: 700;
@@ -165,7 +168,7 @@ main {
   color: #000;
 }
 
-.card-grid{
+.card-grid {
   width: 760px;
   margin: 0 auto;
   display: grid;
@@ -173,6 +176,7 @@ main {
   column-gap: 16px;
   row-gap: 8px;
 }
+
 .paypal-grid {
   width: 760px;
   margin: 0 auto;
@@ -183,9 +187,13 @@ main {
   justify-content: center;
 }
 
-.card-grid, .paypal-grid > div { min-width: 0; }
+.card-grid,
+.paypal-grid>div {
+  min-width: 0;
+}
 
-.card-grid label, .paypal-grid label {
+.card-grid label,
+.paypal-grid label {
   display: block;
   margin-bottom: 4px;
   font-family: var(--font-montserrat);
@@ -197,7 +205,8 @@ main {
   margin-top: 16px;
 }
 
-.card-grid input[type="text"], .paypal-grid input[type="email"] {
+.card-grid input[type="text"],
+.paypal-grid input[type="email"] {
   width: 100%;
   height: 44px;
   padding: 0 12px;
@@ -219,6 +228,7 @@ main {
   width: 50%;
   min-width: 200px;
 }
+
 .card-grid input::placeholder {
   color: var(--color-muted);
   font-family: var(--font-montserrat);
@@ -235,15 +245,17 @@ main {
   line-height: 22px;
 }
 
-.field { position: relative; }
+.field {
+  position: relative;
+}
 
 .field.error input {
   border-color: #E53935;
-  box-shadow: 0 0 0 2px rgba(229,57,53,0.15);
+  box-shadow: 0 0 0 2px rgba(229, 57, 53, 0.15);
 }
 
 .field.error::after {
-  content: attr(data-error); 
+  content: attr(data-error);
   position: absolute;
   right: 10px;
   top: 50%;
@@ -283,13 +295,13 @@ main {
   text-align: center;
   color: #FFFFFF;
   background: linear-gradient(92.74deg, #FD7B46 1.15%, #FE4E9B 98.48%);
-  box-shadow: 0 10px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
 }
 
 #buy-now:focus,
 #buy-now:focus-visible {
   outline: none;
-  box-shadow: 0 10px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
 }
 
 #buy-now:hover {
@@ -341,7 +353,9 @@ main {
     width: 138.5px;
     height: 36px;
   }
-  .card-grid, .paypal-grid {
+
+  .card-grid,
+  .paypal-grid {
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
@@ -353,6 +367,7 @@ main {
     column-gap: 12px;
     row-gap: 12px;
   }
+
   .paypal-grid {
     width: 100%;
     max-width: 100%;
@@ -362,9 +377,20 @@ main {
     grid-template-areas:
       "paypal-email";
   }
- 
-  .card-number{ grid-area: card-number; }
-  .exp-date{ grid-area: exp-date; }
-  .sec-code{ grid-area: sec-code; }
-  .paypal-email{ grid-area: paypal-email; }
+
+  .card-number {
+    grid-area: card-number;
+  }
+
+  .exp-date {
+    grid-area: exp-date;
+  }
+
+  .sec-code {
+    grid-area: sec-code;
+  }
+
+  .paypal-email {
+    grid-area: paypal-email;
+  }
 }
