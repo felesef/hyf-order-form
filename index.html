@@ -23,16 +23,26 @@
       <span>$100</span>
     </div>
   </section>
+  <form class="checkout-form" action="#" method="post" novalidate>
   <section class="payment-method">
     <h2>Payment Method</h2>
-    <div class="methods">
-      <div class="method-type is-active" data-method="card">
+    <div class="methods" role="radiogroup" aria-label="Payment method">
+      <div class="method-type is-active" data-method="card" role="radio" aria-checked="true" tabindex="0">
         <img src="assets/cards.webp" alt="Credit Card" />
         <div class="method-title">Credit Card</div>
       </div>
-      <div class="method-type" data-method="paypal">
+      <div class="method-type" data-method="paypal" role="radio" aria-checked="false" tabindex="0">
         <img src="assets/paypal.webp" alt="PayPal" />
         <div class="method-title">PayPal</div>
+      </div>
+    </div>
+  </section>
+  <section class="paypal-info" aria-hidden="true">
+    <h2>PayPal Email</h2>
+    <div class="paypal-grid">
+      <div class="field paypal-email">
+        <label for="paypal-email">Email</label>
+        <input type="email" id="paypal-email" name="paypal-email" placeholder="email@example.com" autocomplete="email" inputmode="email" />
       </div>
     </div>
   </section>
@@ -41,30 +51,22 @@
     <div class="card-grid">
       <div class="field card-number">
         <label for="card-number">Card Number</label>
-        <input type="text" id="card-number" placeholder="1234 5678 9012 3456" />
+        <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" autocomplete="cc-number" inputmode="numeric" maxlength="19" />
       </div>
       <div class="field exp-date">
         <label for="exp-date">Expiry Date</label>
-        <input type="text" id="exp-date" placeholder="MM / YY" />
+        <input type="text" id="exp-date" name="exp-date" placeholder="MM / YY" autocomplete="cc-exp" inputmode="numeric" maxlength="7" />
       </div>
       <div class="field sec-code">
         <label for="sec-code">CVV</label>
-        <input type="text" id="sec-code" placeholder="123" />
-      </div>
-    </div>
-  </section>
-  <section class="paypal-info" style="display:none;">
-    <h2>PayPal Email</h2>
-    <div class="paypal-grid">
-      <div class="field paypal-email">
-        <label for="paypal-email">Email</label>
-        <input type="email" id="paypal-email" placeholder="email@example.com" />
+        <input type="text" id="sec-code" name="sec-code" placeholder="123" autocomplete="cc-csc" inputmode="numeric" maxlength="4" />
       </div>
     </div>
   </section>
   <div class="submit-button">
     <button id="buy-now" type="submit">Buy Now</button>
   </div>
+  </form>
   <div class="need-help">
     <p>Need help?</p>
   </div>
@@ -228,15 +230,41 @@
 
     methods.forEach(m => {
       m.addEventListener('click', () => {
-        methods.forEach(x => x.classList.remove('is-active'));
+        methods.forEach(x => {
+          x.classList.remove('is-active');
+          x.setAttribute('aria-checked', 'false');
+        });
         m.classList.add('is-active');
+        m.setAttribute('aria-checked', 'true');
 
         if (m.dataset.method === 'card') {
           cardInfo.style.display = '';
           paypalInfo.style.display = 'none';
+          paypalInfo.setAttribute('aria-hidden', 'true');
         } else {
           cardInfo.style.display = 'none';
           paypalInfo.style.display = '';
+          paypalInfo.setAttribute('aria-hidden', 'false');
+        }
+      });
+
+      // Keyboard support: Space/Enter toggles selection; arrows move focus
+      m.addEventListener('keydown', (e) => {
+        if (e.key === ' ' || e.key === 'Enter') {
+          e.preventDefault();
+          m.click();
+        }
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+          e.preventDefault();
+          const idx = methods.indexOf(m);
+          const next = methods[(idx + 1) % methods.length];
+          next.focus();
+        }
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+          e.preventDefault();
+          const idx = methods.indexOf(m);
+          const prev = methods[(idx - 1 + methods.length) % methods.length];
+          prev.focus();
         }
       });
     });
