@@ -134,6 +134,8 @@
     const cardInfo = q('.card-info');
     const paypalInfo = q('.paypal-info');
 
+    paypalInfo.style.display = 'none';
+
     methods.forEach(m => {
         m.addEventListener('click', () => {
             methods.forEach(x => {
