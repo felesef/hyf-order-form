@@ -1,5 +1,12 @@
+:root {
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-size-18: 18px;
+  --font-size-24: 24px;
+  --color-muted: #939393;
+}
+
 header {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-montserrat);
   font-weight: 400;
   font-size: 70px;
   line-height: 1.2;
@@ -18,7 +25,7 @@ header h1 {
 }
 
 header p {
-  font-size: 24px;
+  font-size: var(--font-size-24);
   font-weight: 400;
   line-height: 1.2;
   text-align: center;
@@ -41,7 +48,6 @@ main {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  /*padding: 40px;*/
   opacity: 1;
 }
 
@@ -49,13 +55,12 @@ main {
   background: linear-gradient(92.74deg, #FD7B46 1.15%, #FE4E9B 98.48%);
   color: white;
   padding: 16px 24px;
-  /*border-radius: 10px;*/
   margin-bottom: 16px;
 }
 
 .order-summary h2 {
   margin: 0 0 8px;
-  font-size: 18px;
+  font-size: var(--font-size-18);
   font-weight: 700;
 }
 
@@ -83,7 +88,7 @@ main {
 
 .payment-method h2 {
   margin: 0 0 12px;
-  font-size: 24px;
+  font-size: var(--font-size-24);
   font-weight: 700;
   text-align: center;
 }
@@ -93,7 +98,6 @@ main {
   flex-direction: row;
   gap: 16px;
   align-items: center;
-  /*flex-wrap: wrap;*/
 }
 
 .method-type {
@@ -141,9 +145,9 @@ main {
 }
 
 .method-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-montserrat);
   font-weight: 600;
-  font-size: 18px;
+  font-size: var(--font-size-18);
   line-height: 1;
   text-align: center;
   color: #7A7A7A;
@@ -155,7 +159,7 @@ main {
 
 .card-info h2, .paypal-info h2 {
   margin: 0 0 12px;
-  font-size: 24px;
+  font-size: var(--font-size-24);
   font-weight: 700;
   text-align: center;
   color: #000;
@@ -184,11 +188,11 @@ main {
 .card-grid label, .paypal-grid label {
   display: block;
   margin-bottom: 4px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-montserrat);
   font-weight: 600;
-  font-size: 18px;
+  font-size: var(--font-size-18);
   line-height: 22px;
-  color: #939393;
+  color: var(--color-muted);
   text-align: center;
   margin-top: 16px;
 }
@@ -201,11 +205,11 @@ main {
   background: #F3F1F2;
   border: 1px solid #939393;
   border-radius: 4px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-montserrat);
   font-weight: 400;
-  font-size: 18px;
+  font-size: var(--font-size-18);
   line-height: 22px;
-  color: #939393;
+  color: var(--color-muted);
 }
 
 .paypal-grid input[type="email"] {
@@ -216,18 +220,18 @@ main {
   min-width: 200px;
 }
 .card-grid input::placeholder {
-  color: #939393;
-  font-family: 'Montserrat', sans-serif;
+  color: var(--color-muted);
+  font-family: var(--font-montserrat);
   font-weight: 400;
-  font-size: 18px;
+  font-size: var(--font-size-18);
   line-height: 22px;
 }
 
 .paypal-grid input::placeholder {
-  color: #939393;
-  font-family: 'Montserrat', sans-serif;
+  color: var(--color-muted);
+  font-family: var(--font-montserrat);
   font-weight: 400;
-  font-size: 18px;
+  font-size: var(--font-size-18);
   line-height: 22px;
 }
 
@@ -272,9 +276,9 @@ main {
   display: inline-block;
   border-radius: 68px;
   padding: 16px 32px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-montserrat);
   font-weight: 700;
-  font-size: 24px;
+  font-size: var(--font-size-24);
   line-height: 1;
   text-align: center;
   color: #FFFFFF;
@@ -305,7 +309,7 @@ main {
   line-height: 40px;
   font-family: Arial, sans-serif;
   font-weight: 700;
-  font-size: 18px;
+  font-size: var(--font-size-18);
   letter-spacing: 0;
   text-align: center;
   background: linear-gradient(91.07deg, #FE4E9B 32.21%, #FD7B46 67.08%);
@@ -364,15 +368,3 @@ main {
   .sec-code{ grid-area: sec-code; }
   .paypal-email{ grid-area: paypal-email; }
 }
-
-/*
-.method-type {
-  width: clamp(260px, 40vw, 370px);
-  aspect-ratio: 37 / 11;
-}
-
-.method-type img {
-  width: clamp(90px, 15vw, 138.5px);
-  height: auto;
-}
-*/
